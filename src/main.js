@@ -1,17 +1,35 @@
+// VUE IMPORTS
 import { createApp } from 'vue';
+
+// APP / GLOBALS
 import App from './App.vue';
 import ErrorOutput from './components/ErrorOutput.vue';
+
+// NICE FINGS
 import router from './router';
+
+// FIREBASE
+import { chatAuth } from '@/firebase/config';
 
 // Global Stylesheet
 import '@/assets/main.css';
 
-const app = createApp(App);
 
-app.use(router);
+// Declare app
+let app;
 
-app.component('ErrorOutput', ErrorOutput);
+// We wait for the initial user value to be retrieved from firebase before rendering the app
+// preventing route guard redirects on page refresh
+// On authentication state change
+chatAuth.onAuthStateChanged(() => {
+	// if app has no value, then create the app
+	if (!app) {
+		app = createApp(App);
 
-app.mount('#app');
+		app.use(router);
 
-// createApp(App).use(router).mount('#app')
+		app.component('ErrorOutput', ErrorOutput);
+
+		app.mount('#app');
+	}
+});
