@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import { chatFirestore } from '@/firbase/config.js';
+import { chatFirestore } from '@/firebase/config.js';
 
 const useCollection = (collection) => {
 	// create error inside function, because this may be used for several different collections
