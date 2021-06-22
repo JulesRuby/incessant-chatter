@@ -5,6 +5,11 @@
 </template>
 
 <script>
+import { watch } from 'vue';
+import { useRouter } from 'vue-router';
+
+import getUser from '@/composables/getUser.js';
+
 import NavBar from '@/components/NavBar.vue';
 
 export default {
@@ -13,7 +18,18 @@ export default {
         NavBar,
     },
     setup() {
-        return {};
+        const router = useRouter();
+        const { user } = getUser();
+
+        // Watch changes to user
+        watch(user, () => {
+            // If user becomes null, redirect to login
+            if (!user.value) {
+                router.push({ name: 'Welcome' });
+            }
+        });
+
+        return { user };
     },
 };
 </script>
