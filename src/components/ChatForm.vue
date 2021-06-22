@@ -3,7 +3,7 @@
         <textarea
             placeholder="Enter message..."
             v-model="message"
-            @keypress.enter.prevent="handleEntry"
+            @keypress.enter.prevent="handleEnter"
         ></textarea>
     </form>
 </template>
@@ -16,6 +16,7 @@ import { timestamp } from '@/firebase/config.js';
 import getUser from '@/composables/getUser.js';
 
 export default {
+    name: 'ChatForm',
     setup() {
         const { user } = getUser();
 
@@ -35,10 +36,35 @@ export default {
             message.value = '';
         };
 
-        return { handleSubmit, message };
+        return { handleEnter, message };
     },
 };
 </script>
 
-<style>
+<style scoped>
+form {
+    margin: 10px;
+}
+textarea {
+    margin-bottom: 6px;
+    padding: 10px;
+
+    width: 100%;
+    max-width: 100%;
+
+    color: var(--lumo);
+    font-family: inherit;
+
+    background-color: var(--vesper);
+
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+textarea::placeholder {
+    color: var(--lumo);
+}
 </style>
