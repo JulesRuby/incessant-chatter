@@ -45,6 +45,7 @@ export default {
 form {
     margin: 10px;
 }
+
 textarea {
     margin-bottom: 6px;
     padding: 10px;
