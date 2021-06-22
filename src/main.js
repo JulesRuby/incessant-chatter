@@ -1,5 +1,17 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from 'vue';
+import App from './App.vue';
+import ErrorOutput from './components/ErrorOutput.vue';
+import router from './router';
 
-createApp(App).use(router).mount('#app')
+// Global Stylesheet
+import '@/assets/main.css';
+
+const app = createApp(App);
+
+app.use(router);
+
+app.component('ErrorOutput', ErrorOutput);
+
+app.mount('#app');
+
+// createApp(App).use(router).mount('#app')

@@ -1,0 +1,53 @@
+/* Some custom props */
+body {
+	/* colors */
+	--vesper: hsla(259, 47%, 20%, 1);
+	--vesperL: hsla(259, 47%, 25%, 1);
+	/* --vesper: hsla(259, 47%, var(--l, 20%), var(--alpha, 1)); */
+	--solar: hsla(29, 100%, 69%, 1);
+	--lumo: hsla(180, 44%, 85%, 1);
+	--aether: hsla(176, 69%, 61%, 1);
+	--kinetic: hsla(3, 98%, 67%, 1);
+	--exhilarate: hsla(346, 98%, 67%, 1);
+}
+
+body {
+  /* background: #e3e1ff; */
+  color: #444;
+  color: var(--lumo);
+  background: var(--vesper);
+}
+
+.container {
+  overflow: hidden;
+  margin: 80px auto;
+
+  width: 90%;
+  max-width: 960px;
+
+  background: white;
+  background: var(--vesperL);
+
+  border-radius: 20px;
+  box-shadow: 2px 4px 6px rgba(28, 6, 49, 0.1);
+}
+
+.error {
+  color: var(--kinetic);
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 20px;
+
+  color: var(--vesper);
+  font-weight: bold;
+  text-decoration: none;
+
+  background: var(--solar);
+
+  border: 0;
+  border-radius: 20px;
+
+  cursor: pointer;
+}

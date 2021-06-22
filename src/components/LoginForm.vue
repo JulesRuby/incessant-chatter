@@ -1,0 +1,47 @@
+<template>
+    <!-- <h2>Login</h2> -->
+    <form @submit.prevent="handleSubmit">
+        <input type="email" placeholder="Email..." required v-model="email" />
+        <input
+            type="password"
+            placeholder="Password..."
+            required
+            v-model="password"
+        />
+        <ErrorOutput v-if="error" :error="error" />
+        <button>Log In</button>
+    </form>
+</template>
+
+<script>
+import { ref } from 'vue';
+
+import useLogin from '@/composables/useLogin.js';
+
+export default {
+    name: 'Login',
+    emits: ['login'],
+    // context object is required to emit, when using setup
+    setup(_, context) {
+        const { login, error } = useLogin();
+
+        // Create refs!
+        const email = ref('');
+        const password = ref('');
+
+        // functions
+        const handleSubmit = async () => {
+            await login(email.value, password.value);
+
+            if (!error.value) {
+                context.emit('login');
+            }
+        };
+
+        return { email, password, handleSubmit, error };
+    },
+};
+</script>
+
+<style scoped>
+</style>
