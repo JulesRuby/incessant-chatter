@@ -26,14 +26,11 @@ export default {
         const message = ref('');
 
         const handleEnter = async () => {
-            // Create chat msg object
             const entry = {
                 name: user.value.displayName,
                 timestamp: timestamp(),
                 message: message.value,
             };
-
-            console.log(entry);
 
             await addDocument(entry);
 
