@@ -10,7 +10,8 @@ const getCollection = collection => {
         .collection(collection)
         .orderBy('timestamp');
 
-    collectionRef.onSnapshot(
+    // store returned function to unsub
+    const unsub = collectionRef.onSnapshot(
         snapshot => {
             console.log('Snapshot'); // gotta keep an eye on the snapshots so I don't get charged
             let results = [];
@@ -30,6 +31,12 @@ const getCollection = collection => {
             error.value = 'Error fetching data.';
         },
     );
+
+    // pass in Vue's onInvalidate
+    watchEffect(onInvalidate => {
+        // Unsubscribe onSnapshot from prev collection when this watcher is stopped by component unmount
+        onInvalidate(() => unsub());
+    });
 
     return { documents, error };
 };
