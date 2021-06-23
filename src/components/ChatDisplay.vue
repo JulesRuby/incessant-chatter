@@ -1,7 +1,8 @@
 <template>
     <div class="chat-display">
         <ErrorOutput v-if="error" :error="error" />
-        <div v-if="documents" class="messages">
+        <!-- Ref chatDisplay for height / scroll -->
+        <div v-if="documents" class="messages" ref="chatDisplay">
             <div
                 v-for="doc in dateFormattedDocs"
                 :key="doc.id"
@@ -16,8 +17,9 @@
 </template>
 
 <script>
-import { computed } from 'vue';
+import { ref, computed, onUpdated } from 'vue';
 import { formatDistanceToNow } from 'date-fns';
+
 import getCollection from '@/composables/getCollection.js';
 
 export default {
@@ -36,7 +38,15 @@ export default {
             }
         });
 
-        return { documents, error, dateFormattedDocs };
+        // create chatDisplay ref to scroll user to bottom of messages
+        const chatDisplay = ref(null);
+
+        // on update, set scrollTop to the scrollable element height
+        onUpdated(() => {
+            chatDisplay.value.scrollTop = chatDisplay.value.scrollHeight;
+        });
+
+        return { documents, error, dateFormattedDocs, chatDisplay };
     },
 };
 </script>
