@@ -7,7 +7,7 @@ const getCollection = (collection) => {
 	const documents = ref(null);
 
 	// store collection reference
-	let collectionRef = projectFirestore.collection(collection).orderBy('timestamp');
+	let collectionRef = chatFirestore.collection(collection).orderBy('timestamp');
 
 	collectionRef.onSnapshot((snapshot) => {
 		let results = [];

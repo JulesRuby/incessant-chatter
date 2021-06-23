@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <NavBar />
+        <ChatDisplay />
         <ChatForm />
     </div>
 </template>
@@ -13,11 +14,13 @@ import getUser from '@/composables/getUser.js';
 
 import NavBar from '@/components/NavBar.vue';
 import ChatForm from '@/components/ChatForm.vue';
+import ChatDisplay from '@/components/ChatDisplay.vue';
 
 export default {
     name: 'ChatRoom',
     components: {
         NavBar,
+        ChatDisplay,
         ChatForm,
     },
     setup() {

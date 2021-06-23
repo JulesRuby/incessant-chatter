@@ -57,9 +57,11 @@ textarea {
     max-width: 100%;
 
     color: var(--lumo);
+    color: var(--vesper);
     font-family: inherit;
 
     background-color: var(--vesper);
+    background-color: var(--lumo);
 
     border: 0;
     border-radius: 20px;
@@ -70,5 +72,6 @@ textarea {
 
 textarea::placeholder {
     color: var(--lumo);
+    color: var(--vesper);
 }
 </style>
