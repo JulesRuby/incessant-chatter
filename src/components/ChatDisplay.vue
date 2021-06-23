@@ -2,8 +2,12 @@
     <div class="chat-display">
         <ErrorOutput v-if="error" :error="error" />
         <div v-if="documents" class="messages">
-            <div v-for="doc in documents" :key="doc.id" class="single-message">
-                <span class="timestamp">{{ doc.timestamp.toDate() }}</span>
+            <div
+                v-for="doc in dateFormattedDocs"
+                :key="doc.id"
+                class="single-message"
+            >
+                <span class="timestamp">{{ doc.timestamp }}</span>
                 <span class="name">{{ doc.name }}</span>
                 <span class="message">{{ doc.message }}</span>
             </div>
@@ -12,6 +16,8 @@
 </template>
 
 <script>
+import { computed } from 'vue';
+import { formatDistanceToNow } from 'date-fns';
 import getCollection from '@/composables/getCollection.js';
 
 export default {
@@ -19,7 +25,18 @@ export default {
     setup() {
         const { documents, error } = getCollection('messages');
 
-        return { documents, error };
+        // compute date format
+        const dateFormattedDocs = computed(() => {
+            // avoid computing if no docs
+            if (documents.value) {
+                return documents.value.map((doc) => {
+                    let time = formatDistanceToNow(doc.timestamp.toDate()); // convert timestamp FromNow ('x minutes ago' )
+                    return { ...doc, timestamp: time }; // spread doc to object, reassign timestamp with formatted
+                });
+            }
+        });
+
+        return { documents, error, dateFormattedDocs };
     },
 };
 </script>
