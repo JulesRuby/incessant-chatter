@@ -3,8 +3,6 @@
 </template>
 
 <script>
-const cl = console.log.bind(document);
-
 export default {
     name: 'App',
 };
@@ -12,6 +10,10 @@ export default {
 
 <style>
 #app {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

@@ -2,6 +2,10 @@
 node_modules
 /dist
 
+# FiBa
+fire*.*
+.fire*
+
 
 # local env files
 .env
