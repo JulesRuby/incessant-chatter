@@ -1,27 +1,11 @@
-/*
-STUFF TO TEST LATER
-
-
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;700&family=KoHo:ital,wght@0,400;0,600;1,400;1,600&family=Libre+Barcode+128+Text&family=Orbitron:wght@400;600&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-
-
+/*
 font-family: 'Jura', sans-serif;
 font-family: 'KoHo', sans-serif;
 font-family: 'Libre Barcode 128 Text', cursive;
 font-family: 'Orbitron', sans-serif;
-font-family: 'Space Mono', monospace;
-
---line-color: hsla(0, 100%, 0%, 0.15);
---scanlines: repeating-linear-gradient(
-		0deg,
-		var(--line-color),
-		var(--line-color) 1px,
-		transparent 1px,
-		transparent 2px
-	);
-
- */
+font-family: 'Space Mono', monospace; */
 
 /* Some custom props */
 body {
@@ -29,12 +13,25 @@ body {
     --vesper: rgba(42, 27, 75, 1);
     --vesper: hsla(259, 47%, 20%, 1);
     --vesperL: hsla(259, 47%, 25%, 1);
+    --vesperA: hsla(259, 47%, 25%, 0.7);
     /* --vesper: hsla(259, 47%, var(--l, 20%), var(--alpha, 1)); */
     --solar: hsla(29, 100%, 69%, 1);
     --lumo: hsla(180, 44%, 85%, 1);
+    --lumoA: hsla(180, 44%, 85%, 0.6);
     --aether: hsla(176, 69%, 61%, 1);
+    --aetherA: hsla(176, 69%, 61%, 0.6);
     --kinetic: hsla(3, 98%, 67%, 1);
     --exhilarate: hsla(346, 98%, 67%, 1);
+    --exhilarateA: hsla(346, 98%, 67%, 0.6);
+
+    --line-color: hsla(0, 100%, 0%, 0.15);
+    --scanlines: repeating-linear-gradient(
+        0deg,
+        var(--line-color),
+        var(--line-color) 1px,
+        transparent 1px,
+        transparent 2px
+    );
 }
 
 *,
@@ -56,8 +53,10 @@ body {
     min-height: 100vh;
 
     color: var(--lumo);
+    font-family: 'Space Mono', monospace;
+    font-family: 'KoHo', sans-serif;
     background: var(--vesper);
-    background: url('./anime-night.png');
+    background: url('./anime-night.png') no-repeat center center / cover;
 }
 
 .container {
@@ -70,6 +69,10 @@ body {
 
     background: white;
     background: var(--vesperL);
+    background: var(--vesperA);
+    background: var(--exhilarateA);
+    background: var(--aetherA);
+    /* background: var(--lumoA); */
 
     border-radius: 20px;
     box-shadow: 2px 4px 6px rgba(28, 6, 49, 0.1);
