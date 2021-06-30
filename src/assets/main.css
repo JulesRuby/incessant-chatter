@@ -24,14 +24,71 @@ body {
     --exhilarate: hsla(346, 98%, 67%, 1);
     --exhilarateA: hsla(346, 98%, 67%, 0.6);
 
-    --line-color: hsla(0, 100%, 0%, 0.15);
+    /* More Options For Color */
+    /* CSS HSL */
+    --palatinate-purple: hsla(296, 45%, 21%, 1);
+    --palatinate-purple: 296, 45%, 21%;
+
+    --powder-blue: hsla(180, 45%, 85%, 1);
+    --powder-blue: 180, 45%, 85%;
+
+    --turquoise: #57e0d7;
+    --turquoise: hsla(176, 69%, 61%, 1);
+    --turquoise: 176, 69%, 61%;
+
+    --outrageous-orange: #fa7d61;
+    --outrageous-orange: hsla(11, 94%, 68%, 1);
+    --outrageous-orange: 11, 94%, 68%;
+
+    --paradise-pink: #f44375;
+    --paradise-pink: hsla(343, 89%, 61%, 1);
+    --paradise-pink: 343, 89%, 61%;
+
+    --candy-pink: #E76E84;
+    --candy-pink: hsl(349, 72%, 67%, 1);
+    --candy-pink: 349, 72%, 67%;
+
+    --c1: hsla(var(--turquoise), 1);
+    --c1-a9: hsla(var(--turquoise), 0.9);
+    --c1-a8: hsla(var(--turquoise), 0.8);
+    --c1-a7: hsla(var(--turquoise), 0.7);
+    --c1-a6: hsla(var(--turquoise), 0.6);
+
+    --c2: hsla(var(--powder-blue), 1);
+    --c2-a9: hsla(var(--powder-blue), 0.9);
+    --c2-a8: hsla(var(--powder-blue), 0.8);
+    --c2-a7: hsla(var(--powder-blue), 0.7);
+    --c2-a6: hsla(var(--powder-blue), 0.6);
+
+    --c3: hsla(var(--palatinate-purple), 1);
+    --c3-a9: hsla(var(--palatinate-purple), 0.9);
+    --c3-a8: hsla(var(--palatinate-purple), 0.8);
+    --c3-a7: hsla(var(--palatinate-purple), 0.7);
+    --c3-a6: hsla(var(--palatinate-purple), 0.6);
+
+    --c4: hsla(var(--candy-pink), 1);
+    --c4-a9: hsla(var(--candy-pink), 0.9);
+    --c4-a8: hsla(var(--candy-pink), 0.8);
+    --c4-a7: hsla(var(--candy-pink), 0.7);
+    --c4-a6: hsla(var(--candy-pink), 0.6);
+
+    --c5: hsla(var(--outrageous-orange), 1);
+    --c5-a9: hsla(var(--outrageous-orange), 0.9);
+    --c5-a8: hsla(var(--outrageous-orange), 0.8);
+    --c5-a7: hsla(var(--outrageous-orange), 0.7);
+    --c5-a6: hsla(var(--outrageous-orange), 0.6);
+
+    /* tweaking for later */
+    /* --line-color: hsla(0, 100%, 0%, 0.15);
     --scanlines: repeating-linear-gradient(
         0deg,
         var(--line-color),
         var(--line-color) 1px,
         transparent 1px,
         transparent 2px
-    );
+    ); */
+
+    --radius: 5px;
 }
 
 *,
@@ -52,34 +109,37 @@ body {
     width: 100%;
     min-height: 100vh;
 
-    color: var(--lumo);
-    font-family: 'Space Mono', monospace;
+    color: var(--c3);
     font-family: 'KoHo', sans-serif;
+
     background: var(--vesper);
     background: url('./anime-night.png') no-repeat center center / cover;
 }
 
 .container {
     overflow: hidden;
-    /* margin: 80px auto; */
-    /* flex-grow: 1; */
 
     width: 90%;
     max-width: 960px;
 
-    background: white;
-    background: var(--vesperL);
-    background: var(--vesperA);
-    background: var(--exhilarateA);
-    background: var(--aetherA);
-    /* background: var(--lumoA); */
+    background: var(--c1-a8);
 
-    border-radius: 20px;
-    box-shadow: 2px 4px 6px rgba(28, 6, 49, 0.1);
+    border-radius: var(--radius);
+
+    box-shadow: 2px 4px 6px rgba(28, 6, 49, 0.45);
 }
 
 .error {
-    color: var(--kinetic);
+    padding: 5px;
+    color: var(--c5);
+    background-color: var(--c3);
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        var(--c3) 5%,
+        var(--c3) 95%,
+        transparent 100%
+    );
     font-size: 14px;
 }
 
@@ -91,9 +151,11 @@ button {
     text-decoration: none;
 
     background: var(--solar);
+    background: var(--exhilarate);
 
     border: 0;
     border-radius: 20px;
+    border-radius: var(--radius);
 
     cursor: pointer;
 }

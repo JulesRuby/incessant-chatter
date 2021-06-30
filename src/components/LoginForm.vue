@@ -9,8 +9,8 @@
             v-model="password"
         />
         <ErrorOutput v-if="error" :error="error" />
-        <button>Log In</button>
-        <BaseButton />
+        <!-- <button>Log In</button> -->
+        <base-button>Log In</base-button>
     </form>
 </template>
 

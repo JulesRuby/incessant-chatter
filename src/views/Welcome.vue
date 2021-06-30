@@ -16,11 +16,11 @@
             @signup="enterChat"
             :is="showLogin ? 'LoginForm' : 'SignupForm'"
         />
-        <p v-if="showLogin">
+        <p v-if="showLogin" class="strip">
             No account yet?
             <span @click="showLogin = false">Signup</span> instead!
         </p>
-        <p v-else>
+        <p v-else class="strip">
             Already have an account?
             <span @click="showLogin = true">Login</span> here!
         </p>
@@ -80,22 +80,30 @@ export default {
 
     color: #999;
     color: var(--vesper);
+    font-family: inherit;
 
     background-color: var(--lumo);
     /* border: 1px solid #eee; */
     /* border: 1px solid var(--aether); */
     border: 0;
     border-radius: 20px;
+    border-radius: var(--radius);
     outline: none;
 }
 
 .welcome span {
     color: var(--aether);
+    color: var(--c4);
     font-weight: bold;
     text-decoration: underline;
+    /* background-color: var(--c3); */
     cursor: pointer;
 }
 .welcome button {
     margin: 20px auto;
+}
+
+.strip {
+    background-color: var(--c2-a6);
 }
 </style>

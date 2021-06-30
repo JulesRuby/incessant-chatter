@@ -22,7 +22,8 @@
             v-model="passwordConfirm"
         />
         <ErrorOutput v-if="error" :error="error" />
-        <button :disabled="!passwordsMatch">Sign Up</button>
+        <!-- <button :disabled="!passwordsMatch">Sign Up</button> -->
+        <base-button :disabled="!passwordsMatch">Sign Up</base-button>
     </form>
 </template>
 
@@ -53,7 +54,14 @@ export default {
 
         // functions
         const handleSubmit = async () => {
-            if (!!passwordsMatch) {
+            console.log(passwordsMatch);
+            console.log(passwordsMatch.value);
+            console.log(!!passwordsMatch);
+            if (!passwordsMatch.value) {
+                console.log('meep');
+                console.log(passwordsMatch);
+                console.log(passwordsMatch.value);
+                console.log(!!passwordsMatch);
                 // Deny submit if passwords don't match, for good measure
                 return;
             }
