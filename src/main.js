@@ -3,7 +3,8 @@ import { createApp } from 'vue';
 
 // APP / GLOBALS
 import App from './App.vue';
-import ErrorOutput from './components/ErrorOutput.vue';
+import ErrorOutput from './components/UI/ErrorOutput.vue';
+import BaseButton from './components/UI/BaseButton.vue';
 
 // NICE FINGS
 import router from './router';
@@ -29,6 +30,7 @@ chatAuth.onAuthStateChanged(() => {
 		app.use(router);
 
 		app.component('ErrorOutput', ErrorOutput);
+		app.component('BaseButton', BaseButton);
 
 		app.mount('#app');
 	}

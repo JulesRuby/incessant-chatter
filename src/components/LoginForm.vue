@@ -10,6 +10,7 @@
         />
         <ErrorOutput v-if="error" :error="error" />
         <button>Log In</button>
+        <BaseButton />
     </form>
 </template>
 
