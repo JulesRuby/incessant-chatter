@@ -44,7 +44,7 @@ body {
     --paradise-pink: hsla(343, 89%, 61%, 1);
     --paradise-pink: 343, 89%, 61%;
 
-    --candy-pink: #E76E84;
+    --candy-pink: #e76e84;
     --candy-pink: hsl(349, 72%, 67%, 1);
     --candy-pink: 349, 72%, 67%;
 
@@ -183,7 +183,7 @@ body::before {
 
     animation: static 1.6s steps(10) infinite;
 
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 body::before {

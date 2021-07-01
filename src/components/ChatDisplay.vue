@@ -54,13 +54,17 @@ export default {
 <style scoped>
 .chat-display {
     padding: 30px 20px;
-    /* background: #fafafa; */
-    /* background: var(--vesper); */
-    /* background: var(--c2-a8); */
+    background-color: var(--c3-a8);
 }
 .single-message {
     margin: 18px 0;
+    padding: 0px 10px;
+    width: 90%;
     color: var(--c2);
+    border-left: 2px solid var(--c1);
+    /* background-color: var(--c3-a7); */
+    /* background-color: var(--c2-a7); */
+    /* border-radius: var(--radius); */
 }
 .timestamp {
     display: block;
@@ -68,6 +72,7 @@ export default {
 
     color: #999;
     color: var(--exhilarate);
+    color: var(--c5);
     font-size: 12px;
 }
 .name {

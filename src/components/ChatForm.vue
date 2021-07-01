@@ -46,32 +46,27 @@ export default {
 
 <style scoped>
 form {
-    margin: 10px;
+    padding: 10px 20px;
+    background-color: var(--c1-a6);
 }
 
 textarea {
-    margin-bottom: 6px;
     padding: 10px;
 
     width: 100%;
     max-width: 100%;
 
-    color: var(--lumo);
-    color: var(--vesper);
+    color: var(--c3);
     font-family: inherit;
 
-    background-color: var(--vesper);
-    background-color: var(--lumo);
+    background-color: var(--c2);
 
     border: 0;
-    border-radius: 20px;
+    border-radius: var(--radius);
     outline: none;
-
-    box-sizing: border-box;
 }
 
 textarea::placeholder {
-    color: var(--lumo);
-    color: var(--vesper);
+    color: var(--c3);
 }
 </style>

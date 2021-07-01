@@ -42,6 +42,7 @@ export default {
 
 <style scoped>
 .container {
-    background-color: var(--c3-a8);
+    /* background-color: var(--c3-a8); */
+    background-color: unset;
 }
 </style>
