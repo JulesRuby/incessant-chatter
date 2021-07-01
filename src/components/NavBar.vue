@@ -36,21 +36,27 @@ export default {
 
 <style>
 nav {
-    padding: 20px;
-    border-bottom: 1px solid #eee;
-    border-bottom: 1px solid var(--aether);
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    padding: 20px;
+
+    /* background-color: var(--c3-a8); */
+
+    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--aether);
 }
 nav p {
     margin: 2px auto;
-    font-size: 16px;
-    color: #444;
+    font-family: 'Libre Barcode 128 Text', cursive;
+    font-size: 32px;
     color: var(--aether);
+    /* color: var(--c3); */
 }
 nav p.email {
     font-size: 14px;
+    font-size: 32px;
     color: #999;
     color: var(--exhilarate);
 }

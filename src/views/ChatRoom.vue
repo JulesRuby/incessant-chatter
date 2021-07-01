@@ -41,4 +41,7 @@ export default {
 </script>
 
 <style scoped>
+.container {
+    background-color: var(--c3-a8);
+}
 </style>

@@ -55,10 +55,12 @@ export default {
 .chat-display {
     padding: 30px 20px;
     /* background: #fafafa; */
-    background: var(--vesper);
+    /* background: var(--vesper); */
+    /* background: var(--c2-a8); */
 }
 .single-message {
     margin: 18px 0;
+    color: var(--c2);
 }
 .timestamp {
     display: block;
