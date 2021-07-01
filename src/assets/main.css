@@ -8,6 +8,36 @@ font-family: 'Orbitron', sans-serif;
 font-family: 'Space Mono', monospace; */
 
 /* Some custom props */
+
+:root {
+    /* Fluid Typography && Layout */
+    /* Create a fluid typography base unit, it will scale based on viewport width */
+    /* When using this method, it's important to commit to then sizing items and layout using relative units for elements containing text */
+    --base-font-size: 13px;
+    --fluid-typography-ratio: 0.7;
+    --rem: calc(var(--base-font-size) + var(--fluid-typography-ratio) * 1vw);
+    font-size: var(--rem); /* Set root font-size to --rem, now 1rem is fluid */
+
+    /* Create a typography scale */
+
+    /* multiplier to be used for consistent type size shifts */
+    --scale: 1.15;
+
+    /* Sizes above the rem unit */
+    --scale-up-1: calc(var(--rem) * var(--scale));
+    --scale-up-2: calc(var(--scale-up-1) * var(--scale));
+    --scale-up-3: calc(var(--scale-up-2) * var(--scale));
+    --scale-up-4: calc(var(--scale-up-3) * var(--scale));
+    --scale-up-5: calc(var(--scale-up-4) * var(--scale));
+    --scale-up-6: calc(var(--scale-up-5) * var(--scale));
+    --scale-up-7: calc(var(--scale-up-6) * var(--scale));
+
+    /* Sizes below the rem unit */
+    --scale-down-1: calc(1rem / var(--scale));
+    --scale-down-2: calc(var(--scale-down-1) / var(--scale));
+    --scale-down-3: calc(var(--scale-down-2) / var(--scale));
+}
+
 body {
     /* colors */
     --vesper: rgba(42, 27, 75, 1);
@@ -88,6 +118,7 @@ body {
         transparent 2px
     ); */
 
+    /*  SHTUFF */
     --radius: 5px;
 }
 
@@ -97,6 +128,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* font-size: 1rem; */
 }
 
 body {
@@ -114,6 +146,51 @@ body {
 
     background: var(--vesper);
     background: url('./anime-night.png') no-repeat center center / cover;
+}
+
+/* Declare default fluid heading sizes */
+h1 {
+    font-size: var(--scale-up-6);
+}
+h2 {
+    font-size: var(--scale-up-5);
+}
+h3 {
+    font-size: var(--scale-up-4);
+}
+h4 {
+    font-size: var(--scale-up-3);
+}
+h5 {
+    font-size: var(--scale-up-2);
+}
+h6 {
+    font-size: var(--scale-up-1);
+}
+
+input,
+textarea,
+button,
+::placeholder {
+    color: var(--c3);
+    font-size: var(--scale-down-2);
+}
+
+button {
+    padding: 10px 20px;
+
+    color: var(--vesper);
+    font-weight: bold;
+    text-decoration: none;
+
+    background: var(--solar);
+    background: var(--exhilarate);
+
+    border: 0;
+    border-radius: 20px;
+    border-radius: var(--radius);
+
+    cursor: pointer;
 }
 
 .container {
@@ -136,32 +213,11 @@ body {
     background: linear-gradient(
         to right,
         transparent 0%,
-        var(--c3) 5%,
-        var(--c3) 95%,
+        var(--c3) 10%,
+        var(--c3) 90%,
         transparent 100%
     );
     font-size: 14px;
-}
-
-::placeholder {
-    color: var(--c3);
-}
-
-button {
-    padding: 10px 20px;
-
-    color: var(--vesper);
-    font-weight: bold;
-    text-decoration: none;
-
-    background: var(--solar);
-    background: var(--exhilarate);
-
-    border: 0;
-    border-radius: 20px;
-    border-radius: var(--radius);
-
-    cursor: pointer;
 }
 
 body::before,

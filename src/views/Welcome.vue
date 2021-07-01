@@ -1,13 +1,6 @@
 <template>
     <div class="welcome container">
         <p>Welcome</p>
-        <!-- <div v-if="showLogin">
-            <LoginForm />
-        </div>
-        <div v-else>
-            <SignupForm />
-        </div> -->
-
         <h2 v-if="showLogin">Login</h2>
         <h2 v-else>Sign Up</h2>
 
@@ -78,13 +71,11 @@ export default {
 
     width: 100%;
 
-    color: #999;
-    color: var(--vesper);
+    color: var(--c3);
     font-family: inherit;
 
     background-color: var(--lumo);
-    /* border: 1px solid #eee; */
-    /* border: 1px solid var(--aether); */
+
     border: 0;
     border-radius: 20px;
     border-radius: var(--radius);
