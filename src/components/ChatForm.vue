@@ -66,7 +66,7 @@ textarea {
     outline: none;
 }
 
-textarea::placeholder {
+/* textarea::placeholder {
     color: var(--c3);
-}
+} */
 </style>

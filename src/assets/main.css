@@ -143,6 +143,10 @@ body {
     font-size: 14px;
 }
 
+::placeholder {
+    color: var(--c3);
+}
+
 button {
     padding: 10px 20px;
 
