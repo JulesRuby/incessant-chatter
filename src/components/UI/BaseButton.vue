@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
 button {
-    padding: 10px 20px;
+    padding: var(--space-xs) var(--space);
 
     color: var(--c3);
     font-family: 'KoHo', sans-serif;
@@ -26,7 +26,7 @@ button {
 
     cursor: pointer;
 
-		transition: all 175ms ease;
+    transition: all 175ms ease;
 }
 
 button:hover {
