@@ -36,6 +36,15 @@ font-family: 'Space Mono', monospace; */
     --scale-down-1: calc(1rem / var(--scale));
     --scale-down-2: calc(var(--scale-down-1) / var(--scale));
     --scale-down-3: calc(var(--scale-down-2) / var(--scale));
+
+    /* Units for layout && spacing */
+    --space-xxs: 0.25rem;
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space: 1rem;
+    --space-lg-: 1.25rem;
+    --space-xl-: 1.5rem;
+    --space-xxl-: 1.75rem;
 }
 
 body {
@@ -176,7 +185,7 @@ button,
     font-size: var(--scale-down-2);
 }
 
-button {
+/* button {
     padding: 10px 20px;
 
     color: var(--vesper);
@@ -191,24 +200,25 @@ button {
     border-radius: var(--radius);
 
     cursor: pointer;
-}
+} */
 
 .container {
     overflow: hidden;
 
     width: 90%;
-    max-width: 960px;
+    max-width: 35rem;
 
     background: var(--c1-a8);
-
     border-radius: var(--radius);
-
-    box-shadow: 2px 4px 6px rgba(28, 6, 49, 0.45);
+    box-shadow: 2px 4px 6px var(--c3-a8);
 }
 
 .error {
-    padding: 5px;
+    padding: var(--space-xxs);
+
     color: var(--c5);
+    font-size: var(--scale-down-3);
+
     background-color: var(--c3);
     background: linear-gradient(
         to right,
@@ -217,7 +227,6 @@ button {
         var(--c3) 90%,
         transparent 100%
     );
-    font-size: 14px;
 }
 
 body::before,
@@ -238,8 +247,10 @@ body::before {
     top: -100%;
     left: -100%;
 
-    width: 300%;
-    height: 300%;
+    /* width: 300%; */
+    width: 300vw;
+    /* height: 300%; */
+    height: 300vh;
 
     animation: static 1.6s steps(10) infinite;
 

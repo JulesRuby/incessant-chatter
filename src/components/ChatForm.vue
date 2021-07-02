@@ -65,8 +65,4 @@ textarea {
     border-radius: var(--radius);
     outline: none;
 }
-
-/* textarea::placeholder {
-    color: var(--c3);
-} */
 </style>
