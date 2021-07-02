@@ -182,6 +182,7 @@ textarea,
 button,
 ::placeholder {
     color: var(--c3);
+    font-family: inherit;
     font-size: var(--scale-down-2);
 }
 

@@ -54,44 +54,45 @@ export default {
 <style>
 .welcome {
     text-align: center;
-    padding: 20px 0;
+    /* padding: 20px 0; */
+    padding: var(--space) 0;
 }
 /* form styles */
 .welcome form {
     width: 300px;
     margin: 20px auto;
+    margin: var(--space) auto;
 }
 .welcome label {
     display: block;
-    margin: 20px 0 10px;
+    /* margin: 20px 0 10px; */
+    margin: var(--space) 0 var(--space-xs);
 }
 .welcome input {
-    margin: 10px auto;
-    padding: 10px;
+    margin: var(--space-xs) auto;
+    padding: var(--space-xs);
 
     width: 100%;
 
     color: var(--c3);
-    font-family: inherit;
 
     background-color: var(--lumo);
 
     border: 0;
-    border-radius: 20px;
     border-radius: var(--radius);
     outline: none;
 }
 
 .welcome span {
-    color: var(--aether);
     color: var(--c4);
     font-weight: bold;
     text-decoration: underline;
-    /* background-color: var(--c3); */
+
     cursor: pointer;
 }
 .welcome button {
-    margin: 20px auto;
+    /* margin: 20px auto; */
+    margin: var(--space) auto;
 }
 
 .strip {
