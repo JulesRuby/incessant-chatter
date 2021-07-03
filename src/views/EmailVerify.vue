@@ -38,7 +38,8 @@ export default {
     justify-content: center;
     align-items: center;
 
-    padding: 20px;
+    /* padding: 20px; */
+    padding: var(--space);
 
     height: 40vh;
     width: 60vh;

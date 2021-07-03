@@ -22,7 +22,6 @@
             v-model="passwordConfirm"
         />
         <ErrorOutput v-if="error" :error="error" />
-        <!-- <button :disabled="!passwordsMatch">Sign Up</button> -->
         <base-button :disabled="!passwordsMatch">Sign Up</base-button>
     </form>
 </template>

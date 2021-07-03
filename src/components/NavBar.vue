@@ -42,15 +42,14 @@ nav {
     align-items: center;
 
     padding: 10px 20px;
+    padding: var(--space-xs) var(--space);
 
     background-color: var(--c1-a8);
-
-    /* border-bottom: 1px solid #eee; */
-    /* border-bottom: 1px solid var(--c4); */
 }
 
 .user-info {
     padding: 10px;
+    padding: var(--space-xs);
     background-color: var(--c3-a9);
     border-radius: var(--radius);
 }
@@ -59,14 +58,13 @@ nav p {
     margin: 2px auto;
     font-family: 'Libre Barcode 128 Text', cursive;
     font-size: 32px;
+    font-size: var(--scale-up-4);
     color: var(--c1);
     /* color: var(--c3); */
     /* background-color: var(--c3); */
 }
 nav p.email {
-    font-size: 14px;
-    font-size: 32px;
-    color: #999;
+    font-size: var(--scale-up-4);
     color: var(--c4);
 }
 </style>
