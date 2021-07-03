@@ -42,9 +42,9 @@ font-family: 'Space Mono', monospace; */
     --space-xs: 0.5rem;
     --space-sm: 0.75rem;
     --space: 1rem;
-    --space-lg-: 1.25rem;
-    --space-xl-: 1.5rem;
-    --space-xxl-: 1.75rem;
+    --space-lg: 1.25rem;
+    --space-xl: 1.5rem;
+    --space-xxl: 1.75rem;
 }
 
 body {

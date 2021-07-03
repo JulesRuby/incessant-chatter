@@ -53,36 +53,40 @@ export default {
 
 <style scoped>
 .chat-display {
-    padding: 30px 20px;
+    overflow: hidden;
+    flex-grow: 1; /* grow to fit free space in ChatRoom */
+    padding: var(--space-xl) var(--space);
+
     background-color: var(--c3-a8);
 }
-.single-message {
-    margin: 18px 0;
-    padding: 0px 10px;
-    width: 90%;
-    color: var(--c2);
-    border-left: 2px solid var(--c1);
-    /* background-color: var(--c3-a7); */
-    /* background-color: var(--c2-a7); */
-    /* border-radius: var(--radius); */
-}
-.timestamp {
-    display: block;
-    margin-bottom: 4px;
 
-    color: #999;
-    color: var(--exhilarate);
-    color: var(--c5);
-    font-size: 12px;
-}
-.name {
-    margin-right: 6px;
-
-    color: var(--aether);
-    font-weight: bold;
-}
 .messages {
     overflow: auto;
-    max-height: 400px;
+    max-height: 100%; /* avoid extending beyond .chat-display height */
+}
+
+.single-message {
+    margin: var(--space) 0;
+    padding: 0px var(--space-xs);
+
+    color: var(--c2);
+
+    border-left: 2px solid var(--c1);
+}
+
+.timestamp {
+    display: block;
+    margin-bottom: var(--space-xxs);
+
+    color: var(--c5);
+    /* font-size: 12px; */
+    font-size: var(--scale-down-3);
+}
+
+.name {
+    margin-right: var(--space-xxs);
+
+    color: var(--c1);
+    font-weight: bold;
 }
 </style>

@@ -48,7 +48,6 @@ nav {
 }
 
 .user-info {
-    padding: 10px;
     padding: var(--space-xs);
     background-color: var(--c3-a9);
     border-radius: var(--radius);
@@ -56,12 +55,11 @@ nav {
 
 nav p {
     margin: 2px auto;
+    /* margin: var(--space-xxs) auto; */
     font-family: 'Libre Barcode 128 Text', cursive;
     font-size: 32px;
     font-size: var(--scale-up-4);
     color: var(--c1);
-    /* color: var(--c3); */
-    /* background-color: var(--c3); */
 }
 nav p.email {
     font-size: var(--scale-up-4);

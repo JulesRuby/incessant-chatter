@@ -42,6 +42,12 @@ export default {
 
 <style scoped>
 .container {
+    display: flex;
+    flex-direction: column;
+
     background-color: unset;
+    height: 35rem;
+    max-height: 95vh;
+    /* max-width: 40rem; */
 }
 </style>
