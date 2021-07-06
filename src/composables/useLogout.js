@@ -11,7 +11,6 @@ const logout = async () => {
 	try {
 		await chatAuth.signOut();
 	} catch (err) {
-		console.log(err);
 		error.value = err.message;
 	  };
 }

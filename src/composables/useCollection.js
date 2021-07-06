@@ -12,7 +12,6 @@ const useCollection = (collection) => {
 		try {
 			await chatFirestore.collection(collection).add(doc)
 		} catch (err) {
-			console.log(err.message);
 			error.value = 'Could not send message';
 		}
 	}

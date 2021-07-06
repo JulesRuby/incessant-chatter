@@ -53,14 +53,7 @@ export default {
 
         // functions
         const handleSubmit = async () => {
-            console.log(passwordsMatch);
-            console.log(passwordsMatch.value);
-            console.log(!!passwordsMatch);
             if (!passwordsMatch.value) {
-                console.log('meep');
-                console.log(passwordsMatch);
-                console.log(passwordsMatch.value);
-                console.log(!!passwordsMatch);
                 // Deny submit if passwords don't match, for good measure
                 return;
             }

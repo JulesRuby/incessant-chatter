@@ -26,7 +26,6 @@ const signup = async (displayName, email, password) => {
 
         return res;
     } catch (err) {
-        console.log(err.message); // log error message
         error.value = err.message; // set error ref to the returned error
     }
 };
