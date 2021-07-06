@@ -3,12 +3,13 @@
         <p>Welcome</p>
         <h2 v-if="showLogin">Login</h2>
         <h2 v-else>Sign Up</h2>
-
-        <Component
-            @login="enterChat"
-            @signup="enterChat"
-            :is="showLogin ? 'LoginForm' : 'SignupForm'"
-        />
+        <transition>
+            <Component
+                @login="enterChat"
+                @signup="enterChat"
+                :is="showLogin ? 'LoginForm' : 'SignupForm'"
+            />
+        </transition>
         <p v-if="showLogin" class="strip">
             No account yet?
             <span @click="showLogin = false">Signup</span> instead!
@@ -56,6 +57,7 @@ export default {
     text-align: center;
     /* padding: 20px 0; */
     padding: var(--space) 0;
+    transition: all 200ms ease;
 }
 /* form styles */
 .welcome form {
