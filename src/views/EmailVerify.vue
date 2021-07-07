@@ -5,6 +5,9 @@
             A verification email will have been sent to the e-mail used to
             register your account.
         </p>
+        <base-button @click="resendVerification"
+            >Re-send Verification</base-button
+        >
     </div>
 </template>
 
@@ -18,7 +21,7 @@ export default {
     name: 'EmailValidate',
     setup() {
         const router = useRouter();
-        const { user } = getUser();
+        const { user, resendVerification } = getUser();
 
         watch(user, () => {
             if (user.emailVerified) {
@@ -26,7 +29,7 @@ export default {
             }
         });
 
-        return { user };
+        return { user, resendVerification };
     },
 };
 </script>
@@ -35,7 +38,7 @@ export default {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
     /* padding: 20px; */
