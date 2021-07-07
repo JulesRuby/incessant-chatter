@@ -8,13 +8,19 @@ chatAuth.onAuthStateChanged(_user => {
     user.value = _user; // set ref to user returned from cb
 });
 
-const resendVerification = () => {
-    // console.log(user.value);
-    user.value.sendEmailVerification();
+const reloadUser = () => user.value.reload();
+
+const sendVerification = () => {
+    if (!user.value.emailVerified) {
+        user.value.sendEmailVerification();
+    } else {
+        console.log('Already verified.');
+    }
 };
 
+
 const getUser = () => {
-    return { user, resendVerification };
+    return { user, sendVerification, reloadUser };
 };
 
 export default getUser;

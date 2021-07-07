@@ -8,6 +8,7 @@
         <base-button @click="resendVerification"
             >Re-send Verification</base-button
         >
+        <base-button @click="checkVerification">Check Verification</base-button>
     </div>
 </template>
 
@@ -21,15 +22,38 @@ export default {
     name: 'EmailValidate',
     setup() {
         const router = useRouter();
-        const { user, resendVerification } = getUser();
+        const { user, sendVerification, reloadUser } = getUser();
 
-        watch(user, () => {
-            if (user.emailVerified) {
+        // watch(user, () => {
+        //     if (user.value.emailVerified) {
+        //         router.push({ name: 'ChatRoom' });
+        //     }
+        // });
+
+        const checkVerification = () => {
+            reloadUser();
+            if (user.value.emailVerified) {
                 router.push({ name: 'ChatRoom' });
             }
-        });
+        };
 
-        return { user, resendVerification };
+        const resendVerification = () => {
+            console.log('Bunga');
+            reloadUser();
+            if (!user.value.emailVerified) {
+                sendVerification();
+            } else {
+                router.push({ name: 'ChatRoom' });
+            }
+        };
+
+        return {
+            user,
+            sendVerification,
+            resendVerification,
+            reloadUser,
+            checkVerification,
+        };
     },
 };
 </script>
