@@ -2,25 +2,25 @@
     <div class="chat-display">
         <ErrorOutput v-if="error" :error="error" />
         <!-- Ref chatDisplay for height / scroll -->
-        <transition name="grow">
-            <div v-if="documents" class="messages" ref="chatDisplay">
-                <transition-group
-                    v-if="documents"
-                    ref="chatDisplay"
-                    name="message-list"
+        <!-- <transition name="grow"> -->
+        <div v-if="documents" class="messages" ref="chatDisplay">
+            <transition-group
+                v-if="documents"
+                ref="chatDisplay"
+                name="message-list"
+            >
+                <div
+                    v-for="doc in dateFormattedDocs"
+                    :key="doc.id"
+                    class="single-message"
                 >
-                    <div
-                        v-for="doc in dateFormattedDocs"
-                        :key="doc.id"
-                        class="single-message"
-                    >
-                        <span class="timestamp">{{ doc.timestamp }}</span>
-                        <span class="name">{{ doc.name }}</span>
-                        <span class="message">{{ doc.message }}</span>
-                    </div>
-                </transition-group>
-            </div>
-        </transition>
+                    <span class="timestamp">{{ doc.timestamp }}</span>
+                    <span class="name">{{ doc.name }}</span>
+                    <span class="message">{{ doc.message }}</span>
+                </div>
+            </transition-group>
+        </div>
+        <!-- </transition> -->
     </div>
 </template>
 
@@ -49,9 +49,14 @@ export default {
         // create chatDisplay ref to scroll user to bottom of messages
         const chatDisplay = ref(null);
 
+        console.log(chatDisplay);
+        // console.log(chatDisplay.value.scrollTop);
+
         // on update, set scrollTop to the scrollable element height
         onUpdated(() => {
+            console.log(chatDisplay.value.scrollTop);
             chatDisplay.value.scrollTop = chatDisplay.value.scrollHeight;
+            // console.log(chatDisplay.value.scrollTop);
         });
 
         return {
