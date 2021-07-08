@@ -3,11 +3,11 @@
         <p>Welcome</p>
         <h2 v-if="showLogin">Login</h2>
         <h2 v-else>Sign Up</h2>
-        <transition>
+        <transition name="opacity" mode="out-in">
             <component
                 @login="enterChat"
-                @signup="enterChat"
-                :is="showLogin ? 'LoginForm' : 'SignupForm'"
+                @signup="enterEmailVerification"
+                :is="formComponent"
             />
         </transition>
         <p v-if="showLogin" class="strip">
@@ -24,7 +24,7 @@
 
 <script>
 // vue imports
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
 
 // component imports
@@ -42,12 +42,32 @@ export default {
         const router = useRouter();
         const showLogin = ref(true);
 
+        //computed
+        const formComponent = computed(() =>
+            showLogin.value ? 'LoginForm' : 'SignupForm',
+        );
+
         // functions
         const enterChat = () => {
             router.push({ name: 'ChatRoom' });
         };
 
-        return { showLogin, enterChat };
+        const enterEmailVerification = () => {
+            router.push({ name: 'EmailVerify' });
+        };
+
+        const logPoint = (str) => console.log(str);
+
+        const onBeforeLeave = () => logPoint('Butts');
+
+        return {
+            showLogin,
+            enterChat,
+            enterEmailVerification,
+            formComponent,
+            logPoint,
+            onBeforeLeave,
+        };
     },
 };
 </script>
@@ -99,5 +119,34 @@ export default {
 
 .strip {
     background-color: var(--c2-a6);
+}
+
+.opacity-enter-active {
+    transition: all 150ms ease-out;
+    transform-origin: left;
+}
+.opacity-leave-active {
+    transition: all 150ms ease-in;
+    transform-origin: left;
+}
+
+.opacity-enter-to,
+.opacity-leave-from {
+    opacity: 1;
+    /* transform: scaleX(1); */
+}
+
+.opacity-enter-from {
+    opacity: 0;
+    /* transform: scaleX(0.2); */
+}
+
+.opacity-leave-to {
+    opacity: 0;
+    /* transform: scaleX(0.2); */
+}
+
+.opacity-move {
+    transition: transform 150ms linear;
 }
 </style>

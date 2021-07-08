@@ -1,5 +1,4 @@
 <template>
-    <!-- <h2>Login</h2> -->
     <form @submit.prevent="handleSubmit">
         <input type="email" placeholder="Email..." required v-model="email" />
         <input
@@ -19,7 +18,7 @@ import { ref } from 'vue';
 import useLogin from '@/composables/useLogin.js';
 
 export default {
-    name: 'Login',
+    name: 'LoginForm',
     emits: ['login'],
     // context object is required to emit, when using setup
     setup(_, context) {

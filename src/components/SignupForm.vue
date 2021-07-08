@@ -1,5 +1,4 @@
 <template>
-    <!-- <h2>Signup</h2> -->
     <form @submit.prevent="handleSubmit">
         <input
             type="text"
@@ -17,7 +16,7 @@
         <input
             type="password"
             :style="passwordsMatch ? '' : 'background-color: pink'"
-            placeholder=" Re-type Password..."
+            placeholder="Re-type Password..."
             required
             v-model="passwordConfirm"
         />
@@ -33,7 +32,7 @@ import { ref, computed } from 'vue';
 import useSignup from '@/composables/useSignup';
 
 export default {
-    name: 'Signup',
+    name: 'SignupForm',
     emits: ['signup'],
     setup(_, context) {
         // Assign returned values from useSignup

@@ -54,7 +54,7 @@ export default {
 
         // on update, set scrollTop to the scrollable element height
         onUpdated(() => {
-            console.log(chatDisplay.value.scrollTop);
+            // console.log(chatDisplay.value.scrollTop);
             chatDisplay.value.scrollTop = chatDisplay.value.scrollHeight;
             // console.log(chatDisplay.value.scrollTop);
         });
