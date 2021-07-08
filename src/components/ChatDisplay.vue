@@ -3,15 +3,22 @@
         <ErrorOutput v-if="error" :error="error" />
         <!-- Ref chatDisplay for height / scroll -->
         <div v-if="documents" class="messages" ref="chatDisplay">
-            <div
-                v-for="doc in dateFormattedDocs"
-                :key="doc.id"
-                class="single-message"
+            <transition-group
+                v-if="documents"
+                ref="chatDisplay"
+                name="message-list"
+                @click="logChatDisplay"
             >
-                <span class="timestamp">{{ doc.timestamp }}</span>
-                <span class="name">{{ doc.name }}</span>
-                <span class="message">{{ doc.message }}</span>
-            </div>
+                <div
+                    v-for="doc in dateFormattedDocs"
+                    :key="doc.id"
+                    class="single-message"
+                >
+                    <span class="timestamp">{{ doc.timestamp }}</span>
+                    <span class="name">{{ doc.name }}</span>
+                    <span class="message">{{ doc.message }}</span>
+                </div>
+            </transition-group>
         </div>
     </div>
 </template>
@@ -46,7 +53,12 @@ export default {
             chatDisplay.value.scrollTop = chatDisplay.value.scrollHeight;
         });
 
-        return { documents, error, dateFormattedDocs, chatDisplay };
+        return {
+            documents,
+            error,
+            dateFormattedDocs,
+            chatDisplay,
+        };
     },
 };
 </script>
@@ -62,6 +74,7 @@ export default {
 
 .messages {
     overflow: auto;
+    overflow-x: hidden;
     max-height: 100%; /* avoid extending beyond .chat-display height */
 }
 
@@ -89,4 +102,30 @@ export default {
     color: var(--c1);
     font-weight: bold;
 }
+
+.message-list-enter-to {
+    opacity: 1;
+    transform: translate(0%, 0%);
+}
+
+.message-list-enter-active {
+    transition: all 250ms linear;
+}
+
+.message-list-enter-from {
+    opacity: 0;
+    transform: translate(0%, 1rem);
+}
+
+.message-list-move {
+    transition: transform 150ms linear;
+}
+
+/* We'll use these later if I include delete message functions. */
+/* .message-list-leave-to {
+}
+.message-list-leave-active {
+}
+.message-list-leave-from {
+} */
 </style>
