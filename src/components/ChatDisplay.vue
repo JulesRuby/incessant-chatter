@@ -2,23 +2,25 @@
     <div class="chat-display">
         <ErrorOutput v-if="error" :error="error" />
         <!-- Ref chatDisplay for height / scroll -->
-        <div v-if="documents" class="messages" ref="chatDisplay">
-            <transition-group
-                v-if="documents"
-                ref="chatDisplay"
-                name="message-list"
-            >
-                <div
-                    v-for="doc in dateFormattedDocs"
-                    :key="doc.id"
-                    class="single-message"
+        <transition name="grow">
+            <div v-if="documents" class="messages" ref="chatDisplay">
+                <transition-group
+                    v-if="documents"
+                    ref="chatDisplay"
+                    name="message-list"
                 >
-                    <span class="timestamp">{{ doc.timestamp }}</span>
-                    <span class="name">{{ doc.name }}</span>
-                    <span class="message">{{ doc.message }}</span>
-                </div>
-            </transition-group>
-        </div>
+                    <div
+                        v-for="doc in dateFormattedDocs"
+                        :key="doc.id"
+                        class="single-message"
+                    >
+                        <span class="timestamp">{{ doc.timestamp }}</span>
+                        <span class="name">{{ doc.name }}</span>
+                        <span class="message">{{ doc.message }}</span>
+                    </div>
+                </transition-group>
+            </div>
+        </transition>
     </div>
 </template>
 
@@ -127,4 +129,14 @@ export default {
 }
 .message-list-leave-from {
 } */
+
+.grow-enter-active {
+    transition: all 150ms ease;
+}
+.grow-enter-to {
+    transform: scaleY(1);
+}
+.grow-enter-from {
+    transform: scaleY(0);
+}
 </style>
