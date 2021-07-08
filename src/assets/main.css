@@ -306,3 +306,11 @@ body::after {
         transform: translate(-10%, 10%);
     }
 }
+
+@media screen and (max-width: 48rem) {
+    body {
+        /* overflow: hidden; */
+        /* padding: var(--space); */
+        max-height: 100vh;
+    }
+}

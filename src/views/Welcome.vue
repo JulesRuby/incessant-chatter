@@ -150,4 +150,13 @@ export default {
 .opacity-move {
     transition: transform 150ms linear;
 }
+
+@media screen and (max-width: 48rem) {
+    .welcome {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        max-height: 100vh;
+    }
+}
 </style>

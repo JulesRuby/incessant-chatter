@@ -49,14 +49,9 @@ export default {
         // create chatDisplay ref to scroll user to bottom of messages
         const chatDisplay = ref(null);
 
-        console.log(chatDisplay);
-        // console.log(chatDisplay.value.scrollTop);
-
         // on update, set scrollTop to the scrollable element height
         onUpdated(() => {
-            // console.log(chatDisplay.value.scrollTop);
             chatDisplay.value.scrollTop = chatDisplay.value.scrollHeight;
-            // console.log(chatDisplay.value.scrollTop);
         });
 
         return {

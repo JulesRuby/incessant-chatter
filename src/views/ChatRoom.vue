@@ -48,8 +48,14 @@ export default {
     background-color: unset;
     height: 35rem;
     max-height: 95vh;
-    /* max-width: 40rem; */
+}
 
-    /* border: 5px solid white; */
+@media screen and (max-width: 48rem) {
+    .container {
+        height: 100%;
+        width: 100%;
+        max-width: unset;
+        max-height: 100%;
+    }
 }
 </style>

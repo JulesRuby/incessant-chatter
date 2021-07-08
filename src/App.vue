@@ -45,4 +45,13 @@ export default {
     opacity: 0;
     transform: scale(0.2);
 }
+
+@media screen and (max-width: 48rem) {
+    #app {
+        /* overflow: hidden; */
+        padding: var(--space);
+        height: 100vh;
+        max-height: 100vh;
+    }
+}
 </style>

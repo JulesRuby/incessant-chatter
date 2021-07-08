@@ -40,6 +40,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap:wrap-reverse;
 
     padding: 10px 20px;
     padding: var(--space-xs) var(--space);
@@ -48,14 +49,14 @@ nav {
 }
 
 .user-info {
-    padding: var(--space-xs);
+    padding: var(--space-xxs);
     background-color: var(--c3-a9);
     border-radius: var(--radius);
 }
 
 nav p {
     margin: 2px auto;
-    /* margin: var(--space-xxs) auto; */
+    margin: var(--space-xxs) auto;
     font-family: 'Libre Barcode 128 Text', cursive;
     font-size: 32px;
     font-size: var(--scale-up-4);
