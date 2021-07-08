@@ -76,13 +76,14 @@ export default {
 .welcome {
     text-align: center;
     /* padding: 20px 0; */
-    padding: var(--space) 0;
+    padding: var(--space);
     /* transition: all 200ms ease; */
 }
 /* form styles */
 .welcome form {
-    width: 300px;
-    margin: 20px auto;
+    /* width: 300px; */
+    max-width: 20rem;
+    /* margin: 20px auto; */
     margin: var(--space) auto;
 }
 .welcome label {
@@ -113,11 +114,11 @@ export default {
     cursor: pointer;
 }
 .welcome button {
-    /* margin: 20px auto; */
     margin: var(--space) auto;
 }
 
 .strip {
+    margin: 0 calc(var(--space) * -1);
     background-color: var(--c2-a6);
 }
 
