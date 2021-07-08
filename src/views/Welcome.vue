@@ -4,7 +4,7 @@
         <h2 v-if="showLogin">Login</h2>
         <h2 v-else>Sign Up</h2>
         <transition>
-            <Component
+            <component
                 @login="enterChat"
                 @signup="enterChat"
                 :is="showLogin ? 'LoginForm' : 'SignupForm'"
@@ -57,7 +57,7 @@ export default {
     text-align: center;
     /* padding: 20px 0; */
     padding: var(--space) 0;
-    transition: all 200ms ease;
+    /* transition: all 200ms ease; */
 }
 /* form styles */
 .welcome form {

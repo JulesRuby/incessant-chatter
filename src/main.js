@@ -15,7 +15,6 @@ import { chatAuth } from '@/firebase/config';
 // Global Stylesheet
 import '@/assets/main.css';
 
-
 // Declare app
 let app;
 
@@ -23,15 +22,17 @@ let app;
 // preventing route guard redirects on page refresh
 // On authentication state change
 chatAuth.onAuthStateChanged(() => {
-	// if app has no value, then create the app
-	if (!app) {
-		app = createApp(App);
+    // if app has no value, then create the app
+    if (!app) {
+        app = createApp(App);
 
-		app.use(router);
+        app.use(router);
 
-		app.component('ErrorOutput', ErrorOutput);
-		app.component('BaseButton', BaseButton);
+        app.component('ErrorOutput', ErrorOutput);
+        app.component('BaseButton', BaseButton);
 
-		app.mount('#app');
-	}
+        router.isReady().then(function() {
+            app.mount('#app');
+        });
+    }
 });

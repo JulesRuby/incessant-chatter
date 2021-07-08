@@ -7,7 +7,6 @@
                 v-if="documents"
                 ref="chatDisplay"
                 name="message-list"
-                @click="logChatDisplay"
             >
                 <div
                     v-for="doc in dateFormattedDocs"

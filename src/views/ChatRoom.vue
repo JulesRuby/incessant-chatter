@@ -49,5 +49,7 @@ export default {
     height: 35rem;
     max-height: 95vh;
     /* max-width: 40rem; */
+
+    /* border: 5px solid white; */
 }
 </style>
