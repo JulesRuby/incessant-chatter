@@ -36,11 +36,56 @@ export default {
 </script>
 
 <style scoped>
-nav {
+/* nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap:wrap-reverse;
+
+    padding: 10px 20px;
+    padding: var(--space-xs) var(--space);
+
+    background-color: var(--c1-a8);
+}
+
+.user-info {
+    padding: var(--space-xxs);
+    background-color: var(--c3-a9);
+    border-radius: var(--radius);
+}
+
+nav p {
+    margin: 2px auto;
+    margin: var(--space-xxs) auto;
+    font-family: 'Libre Barcode 128 Text', cursive;
+    font-size: 32px;
+    font-size: var(--scale-up-4);
+    color: var(--c1);
+}
+nav p.email {
+    font-size: var(--scale-up-4);
+    color: var(--c4);
+} */
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
 
     padding: 10px 20px;
     padding: var(--space-xs) var(--space);

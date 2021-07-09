@@ -24,12 +24,6 @@ export default {
         const router = useRouter();
         const { user, sendVerification, reloadUser } = getUser();
 
-        // watch(user, () => {
-        //     if (user.value.emailVerified) {
-        //         router.push({ name: 'ChatRoom' });
-        //     }
-        // });
-
         const checkVerification = () => {
             reloadUser();
             if (user.value.emailVerified) {
@@ -59,13 +53,46 @@ export default {
 </script>
 
 <style scoped>
-.container {
+/* .container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 
-    /* padding: 20px; */
+    padding: var(--space);
+
+    height: 40vh;
+    width: 60vh;
+
+    text-align: center;
+}
+
+.container > * + * {
+    margin-top: 10px;
+} */
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
     padding: var(--space);
 
     height: 40vh;

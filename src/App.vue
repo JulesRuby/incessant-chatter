@@ -13,6 +13,13 @@ export default {
 </script>
 
 <style>
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 [v-cloak] {
     position: relative;
     height: 100vh;
@@ -30,6 +37,14 @@ export default {
     top: 50%;
     left: 50%;
 
+    background: -o-linear-gradient(
+        315deg,
+        var(--c1) 0%,
+        var(--c4) 33%,
+        var(--c1) 66%,
+        var(--c4)
+    );
+
     background: linear-gradient(
         135deg,
         var(--c1) 0%,
@@ -41,12 +56,20 @@ export default {
 
     border-radius: 50%;
 
+    -webkit-animation: rotate-gradient 5s linear infinite;
+
     animation: rotate-gradient 5s linear infinite;
 }
 
 #app {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 
     /* font-family: Avenir, Helvetica, Arial, sans-serif; */
@@ -55,25 +78,35 @@ export default {
 }
 
 .route-enter-active {
+    -webkit-transition: all 150ms ease-out;
+    -o-transition: all 150ms ease-out;
     transition: all 150ms ease-out;
 }
 .route-leave-active {
+    -webkit-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
     transition: all 150ms ease-in;
 }
 
 .route-enter-to,
 .router-leave-from {
     opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 
 .route-enter-from {
     opacity: 0;
+    -webkit-transform: scale(0.2);
+    -ms-transform: scale(0.2);
     transform: scale(0.2);
 }
 
 .route-leave-to {
     opacity: 0;
+    -webkit-transform: scale(0.2);
+    -ms-transform: scale(0.2);
     transform: scale(0.2);
 }
 
@@ -86,7 +119,7 @@ export default {
     }
 }
 
-@keyframes rotate-gradient {
+@-webkit-keyframes rotate-gradient {
     0% {
         background-position: 0% 0%;
     }
@@ -95,4 +128,12 @@ export default {
     }
 }
 
+@keyframes rotate-gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
 </style>

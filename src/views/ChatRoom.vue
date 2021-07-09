@@ -41,8 +41,38 @@ export default {
 </script>
 
 <style scoped>
-.container {
+/* .container {
     display: flex;
+    flex-direction: column;
+
+    background-color: unset;
+    height: 35rem;
+    max-height: 95vh;
+}
+
+@media screen and (max-width: 48rem) {
+    .container {
+        height: 100%;
+        width: 100%;
+        max-width: unset;
+        max-height: 100%;
+    }
+} */
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 
     background-color: unset;

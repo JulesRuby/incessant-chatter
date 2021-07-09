@@ -46,20 +46,17 @@ export default {
 
 <style scoped>
 form {
-    /* padding: 10px 20px; */
     padding: var(--space-xs) var(--space);
     background-color: var(--c1-a6);
 }
 
 textarea {
-    /* padding: 10px; */
     padding: var(--space-xs);
 
     width: 100%;
     max-width: 100%;
 
     color: var(--c3);
-    /* font-family: inherit; */
 
     background-color: var(--c2);
 

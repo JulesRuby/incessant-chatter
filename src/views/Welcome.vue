@@ -73,22 +73,18 @@ export default {
 </script>
 
 <style>
-.welcome {
+/* .welcome {
     text-align: center;
-    /* padding: 20px 0; */
     padding: var(--space);
-    /* transition: all 200ms ease; */
 }
-/* form styles */
+
+
 .welcome form {
-    /* width: 300px; */
     max-width: 20rem;
-    /* margin: 20px auto; */
     margin: var(--space) auto;
 }
 .welcome label {
     display: block;
-    /* margin: 20px 0 10px; */
     margin: var(--space) 0 var(--space-xs);
 }
 .welcome input {
@@ -134,17 +130,14 @@ export default {
 .opacity-enter-to,
 .opacity-leave-from {
     opacity: 1;
-    /* transform: scaleX(1); */
 }
 
 .opacity-enter-from {
     opacity: 0;
-    /* transform: scaleX(0.2); */
 }
 
 .opacity-leave-to {
     opacity: 0;
-    /* transform: scaleX(0.2); */
 }
 
 .opacity-move {
@@ -155,6 +148,110 @@ export default {
     .welcome {
         display: flex;
         flex-direction: column;
+        margin: auto;
+        max-height: 100vh;
+    }
+} */
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+.welcome {
+    text-align: center;
+    padding: var(--space);
+}
+
+/* form styles */
+.welcome form {
+    max-width: 20rem;
+    margin: var(--space) auto;
+}
+.welcome label {
+    display: block;
+    margin: var(--space) 0 var(--space-xs);
+}
+.welcome input {
+    margin: var(--space-xs) auto;
+    padding: var(--space-xs);
+
+    width: 100%;
+
+    color: var(--c3);
+
+    background-color: var(--lumo);
+
+    border: 0;
+    border-radius: var(--radius);
+    outline: none;
+}
+
+.welcome span {
+    color: var(--c4);
+    font-weight: bold;
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+.welcome button {
+    margin: var(--space) auto;
+}
+
+.strip {
+    margin: 0 calc(var(--space) * -1);
+    background-color: var(--c2-a6);
+}
+
+.opacity-enter-active {
+    -webkit-transition: all 150ms ease-out;
+    -o-transition: all 150ms ease-out;
+    transition: all 150ms ease-out;
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
+}
+.opacity-leave-active {
+    -webkit-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
+}
+
+.opacity-enter-to,
+.opacity-leave-from {
+    opacity: 1;
+}
+
+.opacity-enter-from {
+    opacity: 0;
+}
+
+.opacity-leave-to {
+    opacity: 0;
+}
+
+.opacity-move {
+    -webkit-transition: -webkit-transform 150ms linear;
+    transition: -webkit-transform 150ms linear;
+    -o-transition: transform 150ms linear;
+    transition: transform 150ms linear;
+    transition: transform 150ms linear, -webkit-transform 150ms linear;
+}
+
+@media screen and (max-width: 48rem) {
+    .welcome {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         margin: auto;
         max-height: 100vh;
     }

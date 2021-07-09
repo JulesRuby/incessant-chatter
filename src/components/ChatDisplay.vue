@@ -93,7 +93,6 @@ export default {
     margin-bottom: var(--space-xxs);
 
     color: var(--c5);
-    /* font-size: 12px; */
     font-size: var(--scale-down-3);
 }
 
@@ -137,6 +136,105 @@ export default {
     transform: scaleY(1);
 }
 .grow-enter-from {
+    transform: scaleY(0);
+}
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+.chat-display {
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1; /* grow to fit free space in ChatRoom */
+    padding: var(--space-xl) var(--space);
+
+    background-color: var(--c3-a8);
+}
+
+.messages {
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 100%; /* avoid extending beyond .chat-display height */
+}
+
+.single-message {
+    margin: var(--space) 0;
+    padding: 0px var(--space-xs);
+
+    color: var(--c2);
+
+    border-left: 2px solid var(--c1);
+}
+
+.timestamp {
+    display: block;
+    margin-bottom: var(--space-xxs);
+
+    color: var(--c5);
+    font-size: var(--scale-down-3);
+}
+
+.name {
+    margin-right: var(--space-xxs);
+
+    color: var(--c1);
+    font-weight: bold;
+}
+
+.message-list-enter-to {
+    opacity: 1;
+    -webkit-transform: translate(0%, 0%);
+    -ms-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
+}
+
+.message-list-enter-active {
+    -webkit-transition: all 250ms linear;
+    -o-transition: all 250ms linear;
+    transition: all 250ms linear;
+}
+
+.message-list-enter-from {
+    opacity: 0;
+    -webkit-transform: translate(0%, 1rem);
+    -ms-transform: translate(0%, 1rem);
+    transform: translate(0%, 1rem);
+}
+
+.message-list-move {
+    -webkit-transition: -webkit-transform 150ms linear;
+    transition: -webkit-transform 150ms linear;
+    -o-transition: transform 150ms linear;
+    transition: transform 150ms linear;
+    transition: transform 150ms linear, -webkit-transform 150ms linear;
+}
+
+/* We'll use these later if I include delete message functions. */
+/* .message-list-leave-to {
+}
+.message-list-leave-active {
+}
+.message-list-leave-from {
+} */
+
+.grow-enter-active {
+    -webkit-transition: all 150ms ease;
+    -o-transition: all 150ms ease;
+    transition: all 150ms ease;
+}
+.grow-enter-to {
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+}
+.grow-enter-from {
+    -webkit-transform: scaleY(0);
+    -ms-transform: scaleY(0);
     transform: scaleY(0);
 }
 </style>
