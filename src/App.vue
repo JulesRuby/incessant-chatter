@@ -1,8 +1,8 @@
 <template>
     <router-view v-slot="{ Component }">
-        <transition name="route" mode="out-in">
+        <ez-transition name="route" mode="out-in">
             <component :is="Component" />
-        </transition>
+        </ez-transition>
     </router-view>
 </template>
 
@@ -58,7 +58,7 @@ export default {
 
     -webkit-animation: rotate-gradient 5s linear infinite;
 
-    animation: rotate-gradient 5s linear infinite;
+    animation: rotate-gradient 100ms linear infinite;
 }
 
 #app {
@@ -72,42 +72,8 @@ export default {
     -ms-flex-pack: center;
     justify-content: center;
 
-    /* font-family: Avenir, Helvetica, Arial, sans-serif; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-.route-enter-active {
-    -webkit-transition: all 150ms ease-out;
-    -o-transition: all 150ms ease-out;
-    transition: all 150ms ease-out;
-}
-.route-leave-active {
-    -webkit-transition: all 150ms ease-in;
-    -o-transition: all 150ms ease-in;
-    transition: all 150ms ease-in;
-}
-
-.route-enter-to,
-.router-leave-from {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
-}
-
-.route-enter-from {
-    opacity: 0;
-    -webkit-transform: scale(0.2);
-    -ms-transform: scale(0.2);
-    transform: scale(0.2);
-}
-
-.route-leave-to {
-    opacity: 0;
-    -webkit-transform: scale(0.2);
-    -ms-transform: scale(0.2);
-    transform: scale(0.2);
 }
 
 @media screen and (max-width: 48rem) {

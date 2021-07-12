@@ -2,25 +2,27 @@
     <div class="chat-display">
         <ErrorOutput v-if="error" :error="error" />
         <!-- Ref chatDisplay for height / scroll -->
-        <!-- <transition name="grow"> -->
-        <div v-if="documents" class="messages" ref="chatDisplay">
-            <transition-group
-                v-if="documents"
-                ref="chatDisplay"
-                name="message-list"
-            >
-                <div
-                    v-for="doc in dateFormattedDocs"
-                    :key="doc.id"
-                    class="single-message"
+
+        <!-- <ez-transition name="power-on"> -->
+            <div v-if="documents" class="messages" ref="chatDisplay">
+                <ez-transition
+                    v-if="documents"
+                    ref="chatDisplay"
+                    name="message-list"
+                    group
                 >
-                    <span class="timestamp">{{ doc.timestamp }}</span>
-                    <span class="name">{{ doc.name }}</span>
-                    <span class="message">{{ doc.message }}</span>
-                </div>
-            </transition-group>
-        </div>
-        <!-- </transition> -->
+                    <div
+                        v-for="doc in dateFormattedDocs"
+                        :key="doc.id"
+                        class="single-message"
+                    >
+                        <span class="timestamp">{{ doc.timestamp }}</span>
+                        <span class="name">{{ doc.name }}</span>
+                        <span class="message">{{ doc.message }}</span>
+                    </div>
+                </ez-transition>
+            </div>
+        <!-- </ez-transition> -->
     </div>
 </template>
 
@@ -103,42 +105,6 @@ export default {
     font-weight: bold;
 }
 
-.message-list-enter-to {
-    opacity: 1;
-    transform: translate(0%, 0%);
-}
-
-.message-list-enter-active {
-    transition: all 250ms linear;
-}
-
-.message-list-enter-from {
-    opacity: 0;
-    transform: translate(0%, 1rem);
-}
-
-.message-list-move {
-    transition: transform 150ms linear;
-}
-
-/* We'll use these later if I include delete message functions. */
-/* .message-list-leave-to {
-}
-.message-list-leave-active {
-}
-.message-list-leave-from {
-} */
-
-.grow-enter-active {
-    transition: all 150ms ease;
-}
-.grow-enter-to {
-    transform: scaleY(1);
-}
-.grow-enter-from {
-    transform: scaleY(0);
-}
-
 /*
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v7.0.29,
@@ -184,57 +150,5 @@ export default {
 
     color: var(--c1);
     font-weight: bold;
-}
-
-.message-list-enter-to {
-    opacity: 1;
-    -webkit-transform: translate(0%, 0%);
-    -ms-transform: translate(0%, 0%);
-    transform: translate(0%, 0%);
-}
-
-.message-list-enter-active {
-    -webkit-transition: all 250ms linear;
-    -o-transition: all 250ms linear;
-    transition: all 250ms linear;
-}
-
-.message-list-enter-from {
-    opacity: 0;
-    -webkit-transform: translate(0%, 1rem);
-    -ms-transform: translate(0%, 1rem);
-    transform: translate(0%, 1rem);
-}
-
-.message-list-move {
-    -webkit-transition: -webkit-transform 150ms linear;
-    transition: -webkit-transform 150ms linear;
-    -o-transition: transform 150ms linear;
-    transition: transform 150ms linear;
-    transition: transform 150ms linear, -webkit-transform 150ms linear;
-}
-
-/* We'll use these later if I include delete message functions. */
-/* .message-list-leave-to {
-}
-.message-list-leave-active {
-}
-.message-list-leave-from {
-} */
-
-.grow-enter-active {
-    -webkit-transition: all 150ms ease;
-    -o-transition: all 150ms ease;
-    transition: all 150ms ease;
-}
-.grow-enter-to {
-    -webkit-transform: scaleY(1);
-    -ms-transform: scaleY(1);
-    transform: scaleY(1);
-}
-.grow-enter-from {
-    -webkit-transform: scaleY(0);
-    -ms-transform: scaleY(0);
-    transform: scaleY(0);
 }
 </style>

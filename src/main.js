@@ -5,6 +5,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import ErrorOutput from './components/UI/ErrorOutput.vue';
 import BaseButton from './components/UI/BaseButton.vue';
+import EzTransition from './components/UI/EzTransition.vue';
 
 // NICE FINGS
 import router from './router';
@@ -30,6 +31,7 @@ chatAuth.onAuthStateChanged(() => {
 
         app.component('ErrorOutput', ErrorOutput);
         app.component('BaseButton', BaseButton);
+        app.component('EzTransition', EzTransition);
 
         router.isReady().then(function() {
             app.mount('#app');
