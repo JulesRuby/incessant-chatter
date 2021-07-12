@@ -5,21 +5,3 @@ Experimenting with creating a live person-to-person chat application with which 
 This is a project I may continue to work on, just to incorporate more responsive features and test out UI logic. As it stands, it's features are basic enough. You can signup, verify your email, and then log in to see the entire chat log, and any user messages that have been posted before. In other words, a few user names saying "test," over and over.
 
 I'll be trying to update this as I find time, for *funsies* and to try out some ideas that could be feature extending beyond the simplest form.
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
