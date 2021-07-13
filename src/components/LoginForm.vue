@@ -1,8 +1,24 @@
 <template>
     <form @submit.prevent="handleSubmit">
-        <input type="email" placeholder="Email..." required v-model="email" />
+        <!-- <input type="email" placeholder="Email..." required v-model="email" />
         <input
             type="password"
+            placeholder="Password..."
+            required
+            v-model="password"
+        /> -->
+        <FormControl
+            type="email"
+            label="Email"
+            field="email"
+            placeholder="Email..."
+            required
+            v-model="email"
+        />
+        <FormControl
+            type="password"
+            label="Password"
+            field="password"
             placeholder="Password..."
             required
             v-model="password"

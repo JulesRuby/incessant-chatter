@@ -3,8 +3,8 @@
         <p>Welcome</p>
 
         <ez-transition name="opacity" mode="out-in">
-            <h2 v-if="showLogin">Login</h2>
-            <h2 v-else>Sign Up</h2>
+            <h1 v-if="showLogin">Login</h1>
+            <h1 v-else>Sign Up</h1>
         </ez-transition>
 
         <ez-transition name="opacity" mode="out-in">
@@ -98,11 +98,11 @@ export default {
 }
 .welcome label {
     display: block;
-    margin: var(--space) 0 var(--space-xs);
+    /* margin: var(--space) 0 var(--space-xs); */
 }
 .welcome input {
-    margin: var(--space-xs) auto;
-    padding: var(--space-xs);
+    /* margin: var(--space-xs) auto; */
+    /* padding: var(--space-xs); */
 
     width: 100%;
 
