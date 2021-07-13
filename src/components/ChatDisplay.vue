@@ -1,28 +1,19 @@
 <template>
     <div class="chat-display">
-        <ErrorOutput v-if="error" :error="error" />
-        <!-- Ref chatDisplay for height / scroll -->
-
-        <!-- <ez-transition name="power-on"> -->
-            <div v-if="documents" class="messages" ref="chatDisplay">
-                <ez-transition
-                    v-if="documents"
-                    ref="chatDisplay"
-                    name="message-list"
-                    group
+        <div v-if="documents" class="messages" ref="chatDisplay">
+            <ez-transition v-if="documents" name="opacity" group>
+                <div
+                    v-for="doc in dateFormattedDocs"
+                    :key="doc.id"
+                    class="single-message"
                 >
-                    <div
-                        v-for="doc in dateFormattedDocs"
-                        :key="doc.id"
-                        class="single-message"
-                    >
-                        <span class="timestamp">{{ doc.timestamp }}</span>
-                        <span class="name">{{ doc.name }}</span>
-                        <span class="message">{{ doc.message }}</span>
-                    </div>
-                </ez-transition>
-            </div>
-        <!-- </ez-transition> -->
+                    <span class="timestamp">{{ doc.timestamp }}</span>
+                    <span class="name">{{ doc.name }}</span>
+                    <span class="message">{{ doc.message }}</span>
+                </div>
+            </ez-transition>
+        </div>
+        <ErrorOutput v-if="error" :error="error" />
     </div>
 </template>
 
@@ -66,10 +57,10 @@ export default {
 };
 </script>
 
-<style scoped>
-.chat-display {
+<style>
+/* .chat-display {
     overflow: hidden;
-    flex-grow: 1; /* grow to fit free space in ChatRoom */
+    flex-grow: 1;
     padding: var(--space-xl) var(--space);
 
     background-color: var(--c3-a8);
@@ -78,10 +69,12 @@ export default {
 .messages {
     overflow: auto;
     overflow-x: hidden;
-    max-height: 100%; /* avoid extending beyond .chat-display height */
+    max-height: 100%;
 }
 
 .single-message {
+    display: block;
+
     margin: var(--space) 0;
     padding: 0px var(--space-xs);
 
@@ -103,7 +96,7 @@ export default {
 
     color: var(--c1);
     font-weight: bold;
-}
+} */
 
 /*
 * Prefixed by https://autoprefixer.github.io
@@ -151,4 +144,30 @@ export default {
     color: var(--c1);
     font-weight: bold;
 }
+
+/* .message-list-enter-to {
+    -webkit-transform: translate(0%, 0%);
+    -ms-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
+}
+
+.message-list-enter-active {
+    -webkit-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.message-list-enter-from {
+    -webkit-transform: translate(0%, 1rem);
+    -ms-transform: translate(0%, 1rem);
+    transform: translate(0%, 1rem);
+}
+
+.message-list-move {
+    -webkit-transition: -webkit-transform 200ms linear;
+    transition: -webkit-transform 200ms linear;
+    -o-transition: transform 200ms linear;
+    transition: transform 200ms linear;
+    transition: transform 200ms linear, -webkit-transform 200ms linear;
+} */
 </style>
