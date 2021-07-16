@@ -11,7 +11,6 @@
             type="email"
             label="Email"
             field="email"
-            placeholder="Email..."
             required
             v-model="email"
         />
@@ -19,7 +18,6 @@
             type="password"
             label="Password"
             field="password"
-            placeholder="Password..."
             required
             v-model="password"
         />

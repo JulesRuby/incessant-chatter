@@ -1,30 +1,9 @@
 <template>
     <form @submit.prevent="handleSubmit">
-        <!-- <input
-            type="text"
-            placeholder="Display name..."
-            required
-            v-model="displayName"
-        />
-        <input type="email" placeholder="Email..." required v-model="email" />
-        <input
-            type="password"
-            placeholder="Password..."
-            required
-            v-model="password"
-        />
-        <input
-            type="password"
-            :style="passwordsMatch ? '' : 'background-color: pink'"
-            placeholder="Re-type Password..."
-            required
-            v-model="passwordConfirm"
-        /> -->
         <FormControl
             type="text"
             label="Display Name"
             field="displayName"
-            placeholder="Display name..."
             required
             v-model="displayName"
         />
@@ -32,7 +11,6 @@
             type="email"
             label="Email"
             field="email"
-            placeholder="Email..."
             required
             v-model="email"
         />
@@ -40,7 +18,6 @@
             type="password"
             label="Password"
             field="password"
-            placeholder="Password..."
             required
             v-model="password"
         />
@@ -49,7 +26,6 @@
             label="Confirm Password"
             field="passwordConfirm"
             :style="passwordsMatch ? '' : 'background-color: pink'"
-            placeholder="Re-type Password..."
             required
             v-model="passwordConfirm"
         />

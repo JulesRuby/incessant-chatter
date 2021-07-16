@@ -57,7 +57,7 @@ export default {
 
 .form-control label {
     display: inline-block;
-    padding: var(--space-xxs) var(--space-xs);
+    padding: var(--space-xxs) var(--space-xs) 0;
     padding-right: var(--space-lg);
 
     background-color: var(--c2);
@@ -71,12 +71,10 @@ export default {
         0% 100%
     );
 
-    /* border-bottom: 2px solid var(--c1); */
+    cursor: pointer;
 }
 
 .form-control input {
-    /* position: relative; */
-    /* margin: var(--space-xs) auto; */
     padding: var(--space-xs);
 
     width: 100%;
@@ -86,14 +84,7 @@ export default {
     background-color: var(--lumo);
 
     border: 0;
-    /* border-radius: var(--radius); */
     border-radius: 0 var(--radius) var(--radius);
     outline: none;
-
-    /* z-index: 2; */
 }
-
-/* button {
-    margin: var(--space) auto;
-} */
 </style>
