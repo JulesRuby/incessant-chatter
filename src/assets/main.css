@@ -442,6 +442,10 @@ body {
     /* font-size: 1rem; */
 }
 
+html {
+    overflow: hidden;
+}
+
 body {
     overflow: hidden;
     position: relative;
@@ -704,7 +708,7 @@ body::after {
 
 @media screen and (max-width: 48rem) {
     body {
-        /* overflow: hidden; */
+        overflow: hidden;
         /* padding: var(--space); */
         max-height: 100vh;
     }
