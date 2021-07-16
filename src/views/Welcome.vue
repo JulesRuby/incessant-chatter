@@ -96,24 +96,6 @@ export default {
     max-width: 20rem;
     margin: var(--space) auto;
 }
-.welcome label {
-    display: block;
-    /* margin: var(--space) 0 var(--space-xs); */
-}
-.welcome input {
-    /* margin: var(--space-xs) auto; */
-    /* padding: var(--space-xs); */
-
-    width: 100%;
-
-    color: var(--c3);
-
-    background-color: var(--lumo);
-
-    border: 0;
-    border-radius: var(--radius);
-    outline: none;
-}
 
 .welcome span {
     color: var(--c4);
@@ -122,6 +104,7 @@ export default {
 
     cursor: pointer;
 }
+
 .welcome button {
     margin: var(--space) auto;
 }
