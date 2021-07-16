@@ -53,24 +53,6 @@ export default {
 </script>
 
 <style scoped>
-/* .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: var(--space);
-
-    height: 40vh;
-    width: 60vh;
-
-    text-align: center;
-}
-
-.container > * + * {
-    margin-top: 10px;
-} */
-
 /*
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v7.0.29,
