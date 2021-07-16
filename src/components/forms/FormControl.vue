@@ -48,6 +48,13 @@ export default {
 </script>
 
 <style scoped>
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 .form-control {
     margin: var(--space) 0 var(--space-xs);
 
@@ -62,6 +69,13 @@ export default {
 
     background-color: var(--c2);
     border-radius: var(--radius) 0 0 0;
+
+    -webkit-clip-path: polygon(
+        0 0,
+        calc(100% - var(--space-lg)) 0,
+        100% 100%,
+        0% 100%
+    );
 
     clip-path: polygon(0 0, calc(100% - var(--space-lg)) 0, 100% 100%, 0% 100%);
     shape-outside: polygon(
